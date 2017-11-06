@@ -3,7 +3,7 @@
 let mic = require('./mic.js');
 let crypt = require('./crypt.js');
 let packet = require('./packet.js');
-import {calculateJoinAcceptMIC} from "./mic";
+import {calculateJoinAcceptMIC} from "mic";
 let util = require('./util.js')("");
 
 module.exports = {
