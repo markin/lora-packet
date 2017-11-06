@@ -1,7 +1,7 @@
 {
-  "name": "node-es6-starter",
+  "name": "lora-packet",
   "version": "1.0.0",
-  "description": "Node.js ES6 starter with Babel & ESLint",
+  "description": "LoRa & LoRaWAN packet utility",
   "main": "lib/index.js",
   "babel": {
     "presets": [
