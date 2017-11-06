@@ -1,19 +1,51 @@
 {
-  "name": "lora-packet",
+  "name": "node-es6-starter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Node.js ES6 starter with Babel & ESLint",
+  "main": "lib/index.js",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb/base"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src/**",
+    "build": "babel --presets es2015 src -d lib",
+    "prepublish": "npm run build",
+    "start": "node lib/",
+    "dev": "./node_modules/.bin/babel-node src/",
+    "test-cov": "babel-node ./node_modules/.bin/isparta cover _mocha",
+    "test": "babel-node ./node_modules/.bin/_mocha"
+  },
+  "engines": {
+    "node": ">=6.1.0",
+    "npm": ">=3.8.6"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/LORADATA/lora-packet.git"
+    "url": "https://github.com/palanik/node-es6-starter.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/LORADATA/lora-packet/issues"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
-  "homepage": "https://gitlab.com/LORADATA/lora-packet#README"
+  "author": "N. Palani Kumanan",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "isparta": "^4.0.0",
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "node-aes-cmac": "^0.1.1"
+  }
 }
